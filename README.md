@@ -1,5 +1,16 @@
 # MmWebApp
 
+To build after cloning the repository:
+```
+npm install
+ng build
+ng serve
+```
+When you look at:  http://localhost:4200/
+
+It will look like this:
+![hatmirrorphoneinterface](https://user-images.githubusercontent.com/1727761/29428726-d221466a-8353-11e7-8631-a9e9976fd3fc.png)
+
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.24.
 
 ## Development server
