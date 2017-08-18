@@ -11,8 +11,10 @@ export class SyncComponent implements OnInit, OnDestroy {
 
   code = '';
   problem = '';
-  connect = '';
 	problemObserver;
+	connectObserver;
+  mirrorSocketId;
+  feedback = '';
 
   constructor(
     private socketService: SocketService
@@ -22,8 +24,16 @@ export class SyncComponent implements OnInit, OnDestroy {
     this.problemObserver = this.socketService
       .getProblems()
       .subscribe((data) => {
-console.log('got a problem');
         this.problem = String(data);
+        this.mirrorSocketId = null;
+        this.feedback = '';
+      });
+    this.connectObserver = this.socketService
+      .getConnect()
+      .subscribe((data) => {
+        this.mirrorSocketId = data;
+        this.feedback = 'You are connected to the Hat Mirror';
+        this.problem = '';
       });
   }
 

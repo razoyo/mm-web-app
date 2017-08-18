@@ -8,7 +8,6 @@ export class SocketService {
   constructor(private socket: Socket) { }
 
   sendPhoneCode(code) {
-console.log('code = ' + code);
 		this.socket.emit('phone', code);
 	}
 
