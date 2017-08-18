@@ -1,3 +1,12 @@
-<p>
-  sync works!
-</p>
+<div class="container">
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="code">Enter Code from Mirror</label>
+      <input type="text" class="form-control" id="name" 
+             required
+             [(ngModel)]="code" name="code">
+    </div>
+    <button type="submit" class="btn btn-success">Submit</button>
+  </form>
+  <p>{{ problem }}</p>
+</div>
