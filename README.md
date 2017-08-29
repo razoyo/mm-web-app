@@ -9,9 +9,24 @@ ng serve
 When you look at:  http://localhost:4200/
 
 It will look like this:
-![hatmirrorphoneinterface](https://user-images.githubusercontent.com/1727761/29428726-d221466a-8353-11e7-8631-a9e9976fd3fc.png)
+<img width="518" alt="phoneapp2" src="https://user-images.githubusercontent.com/1727761/29830139-fbe73084-8ca6-11e7-9df3-5569553d7e2e.png">
 
-This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.24.
+This project has been updated to these versions:
+```
+@angular/cli: 1.3.0
+node: 6.10.0
+os: darwin x64
+@angular/common: 2.4.10
+@angular/compiler: 2.4.10
+@angular/core: 2.4.10
+@angular/forms: 2.4.10
+@angular/http: 2.4.10
+@angular/platform-browser: 2.4.10
+@angular/platform-browser-dynamic: 2.4.10
+@angular/router: 3.4.10
+@angular/cli: 1.3.0
+@angular/compiler-cli: 2.4.10
+```
 
 ## Development server
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.

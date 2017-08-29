@@ -39,4 +39,19 @@ export class SocketService {
     return observable;
   }
 
+  getNewPictures() {
+    let observable = new Observable(observer => {
+      this.socket.on('newPictures', (data) => {
+        console.log('data = ' + JSON.stringify(data, null, 2));
+        observer.next(data);
+      });
+
+      return () => {
+        this.socket.disconnect();
+      };
+    })
+
+    return observable;
+  }
+
 }
