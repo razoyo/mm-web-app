@@ -9,10 +9,12 @@ import { PhotoShareComponent } from './photo-share/photo-share.component';
 import { PurchaseComponent } from './purchase/purchase.component';
 import { SyncComponent } from './sync/sync.component';
 
-import { SocketService } from './socket.service';
+import { SocketService } from './shared/socket.service';
+import { stateInit } from './shared/stateInit';
+
 
 const config: SocketIoConfig = {
-    url: 'ec2-54-221-218-6.compute-1.amazonaws.com:4000',
+    url: stateInit.socket_url,
     options: {}
 };
 

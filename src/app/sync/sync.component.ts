@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-import { SocketService } from '../socket.service';
+import { SocketService } from '../shared/socket.service';
 
 @Component({
   selector: 'app-sync',
@@ -42,6 +42,7 @@ export class SyncComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
+    this.connectObserver.unsubscribe();
     this.problemObserver.unsubscribe();
   }
 
