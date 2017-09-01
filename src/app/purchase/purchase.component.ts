@@ -1,15 +1,39 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
+import { SocketService } from '../shared/socket.service';
+
+interface PurchaseType {
+  url: string;
+  name: string;
+}
 
 @Component({
   selector: 'app-purchase',
   templateUrl: './purchase.component.html',
   styleUrls: ['./purchase.component.css']
 })
-export class PurchaseComponent implements OnInit {
+export class PurchaseComponent implements OnInit, OnDestroy {
 
-  constructor() { }
+  url: string = '';
+  name: string = '';
+  purchaseObserver;
+
+  constructor(
+    private socketService: SocketService
+  ) { }
 
   ngOnInit() {
+    this.purchaseObserver = this.socketService
+      .getPurchase()
+      .subscribe((data:PurchaseType) => {
+        console.log('getPurchase');
+        this.url = data.url;
+        this.name = data.name;
+      });
+  }
+
+  ngOnDestroy() {
+    this.purchaseObserver.unsubscribe();
   }
 
 }
