@@ -71,4 +71,8 @@ export class SocketService {
     return observable;
   }
 
+  disconnect() {
+    return this.socket.disconnect();
+    }
+
 }

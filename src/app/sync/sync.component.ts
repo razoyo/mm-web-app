@@ -16,6 +16,12 @@ export class SyncComponent implements OnInit, OnDestroy {
   mirrorSocketId;
   feedback = '';
 
+  reconnect() {
+    this.socketService.disconnect();
+    this.mirrorSocketId = null;
+    this.code = null;
+    }
+
   constructor(
     private socketService: SocketService
   ) { }
@@ -26,6 +32,7 @@ export class SyncComponent implements OnInit, OnDestroy {
       .subscribe((data) => {
         this.problem = String(data);
         this.mirrorSocketId = null;
+        this.code = null;
         this.feedback = '';
       });
     this.connectObserver = this.socketService
@@ -38,6 +45,7 @@ export class SyncComponent implements OnInit, OnDestroy {
   }
 
   onSubmit() {
+    console.log('sending code | ',this.code);
     this.socketService.sendPhoneCode(this.code);
   }
 

@@ -1,2 +1,3 @@
-<h2>{{ name }}</h2>
-<a *ngIf="url" href="{{ url }}">Purchase Me</a>
+<div *ngIf="url" class="container">
+  <button class="btn btn-danger"><a href="{{ url }}" target="blank">Buy "{{name}}"</a></button>
+</div>

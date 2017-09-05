@@ -29,6 +29,7 @@ export class PurchaseComponent implements OnInit, OnDestroy {
         console.log('getPurchase');
         this.url = data.url;
         this.name = data.name;
+        window.open(this.url);
       });
   }
 

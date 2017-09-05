@@ -1,1 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
+.main {
+  display: flex;
+  max-width: 600px;
+  flex-flow: column;
+  align-items: stretch;
+  padding: 1em;
+  }
+
+.container {
+  padding: 1em;
+  width: 100%;
+  }
+
+.btn-danger > a {
+  color: white;
+  }

@@ -1,5 +1,5 @@
 <div class="container">
-  <form (ngSubmit)="onSubmit()">
+  <form *ngIf="!mirrorSocketId" (ngSubmit)="onSubmit()">
     <div class="form-group">
       <label for="code">Enter Code from Mirror</label>
       <input type="text" class="form-control" id="name" 
@@ -8,6 +8,5 @@
     </div>
     <button type="submit" class="btn btn-success">Submit</button>
   </form>
-  <p>{{ problem }}</p>
-  <p>{{ feedback }}<p>
+  <button *ngIf="mirrorSocketId" class="btn" (click)="reconnect()">Reset Connection</button>
 </div>
