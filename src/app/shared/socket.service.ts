@@ -43,6 +43,23 @@ export class SocketService {
     let observable = new Observable(observer => {
       this.socket.on('newPictures', (data) => {
         console.log('data = ' + JSON.stringify(data, null, 2));
+        let obj = {};
+        obj['pictures'] = data;
+        observer.next(obj);
+      });
+
+      return () => {
+        this.socket.disconnect();
+      };
+    })
+
+    return observable;
+  }
+
+  getPurchase() {
+    let observable = new Observable(observer => {
+      this.socket.on('purchase', (data) => {
+        console.log('data = ' + JSON.stringify(data, null, 2));
         observer.next(data);
       });
 

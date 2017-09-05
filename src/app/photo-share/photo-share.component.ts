@@ -13,7 +13,7 @@ interface PicturesListType {
 })
 export class PhotoShareComponent implements OnInit, OnDestroy {
 
-  pictures = [];
+  pictures: string [];
   newPicturesObserver;
 
   constructor(
@@ -24,7 +24,7 @@ export class PhotoShareComponent implements OnInit, OnDestroy {
     this.newPicturesObserver = this.socketService
       .getNewPictures()
       .subscribe((data:PicturesListType) => {
-        this.pictures = data.pictures;
+        this.pictures = data['pictures'];
       });
   }
 
