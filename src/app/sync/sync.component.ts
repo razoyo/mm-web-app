@@ -2,8 +2,6 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { SocketService } from '../shared/socket.service';
 
-import 'rxjs/add/operator/map';
-
 @Component({
   selector: 'app-sync',
   templateUrl: './sync.component.html',
