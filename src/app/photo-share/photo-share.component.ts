@@ -14,7 +14,9 @@ interface PicturesListType {
 export class PhotoShareComponent implements OnInit, OnDestroy {
 
   pictures: string [];
+
   newPicturesObserver;
+  fPictures: boolean = false;
 
   constructor(
     private socketService: SocketService
@@ -25,6 +27,10 @@ export class PhotoShareComponent implements OnInit, OnDestroy {
       .getNewPictures()
       .subscribe((data:PicturesListType) => {
         this.pictures = data['pictures'];
+        console.log('this.pictures = ' + JSON.stringify(this.pictures));
+        if (this.pictures.length > 0) {
+          this.fPictures = true;
+        }
       });
   }
 
