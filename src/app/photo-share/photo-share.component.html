@@ -1,8 +1,6 @@
-<div *ngIf="picture"  class="section">
+<div *ngIf="fPictures"  class="section">
   <h3>Picture</h3>
-  <ul>
-    <li *ngFor="let picture of pictures">
-      <img src="assets/customer-photos/{{picture}}">
-    </li>
-  </ul>
+  <div *ngFor="let picture of pictures">
+      <img class="rotate90" src="assets/customer-photos/{{picture}}">
+  </div>
 </div>
