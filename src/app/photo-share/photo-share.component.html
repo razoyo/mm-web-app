@@ -1,7 +1,13 @@
 <div *ngIf="fPictures"  class="section">
   <h3>Pictures</h3>
   <ul>
-    <li *ngFor="let picture of pictures"><img src="assets/customer-photos/{{ picture }}"></li>
+    <li *ngFor="let picture of pictures">
+      <img src="assets/customer-photos/{{ picture }}">
+      <br/>
+      <button shareButton="facebook" class="btn btn-facebook"><i class="fa fa-facebook"></i></button>
+      <button shareButton="pinterest" class="btn btn-pinterest"><i class="fa fa-pinterest"></i></button>
+      <button shareButton="whatsapp" class="btn btn-whatsapp"><i class="fa fa-whatsapp"></i></button>
+    </li>
   </ul>
 </div>
 
