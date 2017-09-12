@@ -4,9 +4,11 @@
     <li *ngFor="let picture of pictures">
       <img src="assets/customer-photos/{{ picture }}">
       <br/>
-      <button shareButton="facebook" class="btn btn-facebook"><i class="fa fa-facebook"></i></button>
-      <button shareButton="pinterest" class="btn btn-pinterest"><i class="fa fa-pinterest"></i></button>
-      <button shareButton="whatsapp" class="btn btn-whatsapp"><i class="fa fa-whatsapp"></i></button>
+<!--
+      <button shareButton="pinterest" class="btn btn-pinterest" sbImage="{{stateinit.base_url}}/assets/customer-photos/{{ picture }}"><i class="fa fa-pinterest"></i></button>
+      <button shareButton="whatsapp" class="btn btn-whatsapp" sbImage="{{stateinit.base_url}}/assets/customer-photos/{{ picture }}"><i class="fa fa-whatsapp"></i></button>
+      <button shareButton="twitter" class="btn btn-twitter" sbImage="{{stateinit.base_url}}/assets/customer-photos/{{ picture }}"><i class="fa fa-twitter"></i></button>
+-->
     </li>
   </ul>
 </div>

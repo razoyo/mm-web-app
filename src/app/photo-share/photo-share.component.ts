@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { SocketService } from '../shared/socket.service';
+import { stateInit } from '../shared/stateInit';
 
 interface PicturesListType {
   pictures: string[];
@@ -16,6 +17,7 @@ export class PhotoShareComponent implements OnInit, OnDestroy {
   pictures: string [];
 
   newPicturesObserver;
+	stateinit;
   fPictures: boolean = false;
 
   constructor(
@@ -27,11 +29,11 @@ export class PhotoShareComponent implements OnInit, OnDestroy {
       .getNewPictures()
       .subscribe((data:PicturesListType) => {
         this.pictures = data['pictures'];
-        console.log('this.pictures = ' + JSON.stringify(this.pictures));
         if (this.pictures.length > 0) {
           this.fPictures = true;
         }
       });
+		this.stateinit = stateInit;
   }
 
   ngOnDestroy() {
