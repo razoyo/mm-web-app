@@ -1,7 +1,15 @@
-.rotate90 {
-  transform: rotate(90) !important;
-  -ms-transform: rotate(90) !important;
-  -moz-transform: rotate(90) !important;
-  -webkit-transform: rotate(90) !important;
-  -o-transform: rotate(90) !important;
+ul {
+  padding: 0;
+  list-style: none;
+	width: 300px;
+  margin: auto;
+}
+
+li {
+  margin: 10px;
+}
+
+li > img {
+  max-width: 300px;
+  transform: rotate(270deg); 
 }
