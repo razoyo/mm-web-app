@@ -88,3 +88,28 @@ li > img {
 .btn-whatsapp:focus {
   color: #fff;
 }
+
+.btn-twitter {
+  color: #fff;
+  background-color: #55acee;
+  outline: 0;
+  border: none;
+}
+
+.btn-twitter:hover {
+  color: #fff;
+  background-color: #55acee;
+  outline: 0;
+  border: none;
+}
+
+.btn-twitter:active {
+  color: #fff;
+  background-color: #55acee;
+  outline: 0;
+  border: none;
+}
+
+.btn-twitter:focus {
+  color: #fff;
+}

@@ -1,9 +1,15 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { SocketService } from '../shared/socket.service';
+import { stateInit } from '../shared/stateInit';
 
 interface PicturesListType {
   pictures: string[];
+}
+
+interface PictureInfoType {
+  href: string;
+  sbUrl: string; 
 }
 
 @Component({
@@ -13,9 +19,10 @@ interface PicturesListType {
 })
 export class PhotoShareComponent implements OnInit, OnDestroy {
 
-  pictures: string [];
+  pictureInfos: PictureInfoType [];
 
   newPicturesObserver;
+  stateinit;
   fPictures: boolean = false;
 
   constructor(
@@ -26,12 +33,18 @@ export class PhotoShareComponent implements OnInit, OnDestroy {
     this.newPicturesObserver = this.socketService
       .getNewPictures()
       .subscribe((data:PicturesListType) => {
-        this.pictures = data['pictures'];
-        console.log('this.pictures = ' + JSON.stringify(this.pictures));
-        if (this.pictures.length > 0) {
+        this.fPictures = false;
+        this.pictureInfos.splice(0, this.pictureInfos.length);
+        for (let i = 0; i < data['pictures'].length; i++) {
           this.fPictures = true;
+          let info: PictureInfoType = {
+            href = 'assets/customer-photos/' + data['pictures'][i];
+            sbUrl = stateinit.base_url + '/assets/customer-photos/' + data['pictures'][i];
+          };
+          this.pictureInfos.push(info);
         }
       });
+      this.stateinit = stateInit;
   }
 
   ngOnDestroy() {
