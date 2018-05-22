@@ -14,6 +14,7 @@ export class SocketService {
   getProblems() {
     let observable = new Observable(observer => {
       this.socket.on('problem', (data) => {
+        console.log('there was a problem ',data);
         observer.next(data);
       });
 

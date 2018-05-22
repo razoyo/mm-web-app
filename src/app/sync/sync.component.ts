@@ -33,7 +33,7 @@ export class SyncComponent implements OnInit, OnDestroy {
         this.problem = String(data);
         this.mirrorSocketId = null;
         this.code = null;
-        this.feedback = '';
+        this.feedback = 'unable to connect to socket server';
       });
     this.connectObserver = this.socketService
       .getConnect()
