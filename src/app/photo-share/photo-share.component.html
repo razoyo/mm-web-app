@@ -1,8 +1,14 @@
-<div *ngIf="picture"  class="section">
-  <h3>Picture</h3>
+<div *ngIf="fPictures"  class="section">
+  <h3>Pictures</h3>
   <ul>
-    <li *ngFor="let picture of pictures">
-      {{ picture }}
+    <li *ngFor="let info of pictureInfos">
+      <img src="{{ info.href }}">
+      <br/>
+      <button shareButton="facebook" class="btn btn-facebook" [sbUrl]="{{ info.sbUrl }}"><i class="fa fa-facebook"></i></button>
+      <button shareButton="pinterest" class="btn btn-pinterest" [sbUrl]="{{ info.sbUrl }}"><i class="fa fa-pinterest"></i></button>
+      <button shareButton="whatsapp" class="btn btn-whatsapp" [sbUrl]="{{ info.sbUrl }}"><i class="fa fa-whatsapp"></i></button>
+      <button shareButton="twitter" class="btn btn-twitter" [sbUrl]="{{ info.sbUrl }}"><i class="fa fa-twitter"></i></button>
     </li>
   </ul>
 </div>
+

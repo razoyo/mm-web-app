@@ -1,0 +1,115 @@
+ul {
+  padding: 0;
+  list-style: none;
+	width: 300px;
+  margin: auto;
+}
+
+li {
+  margin: 10px;
+}
+
+li > img {
+  max-width: 300px;
+  transform: rotate(270deg); 
+}
+
+.btn-facebook {
+  color: #fff;
+  background-color: #4c67a1;
+  outline: 0;
+  border: none;
+}
+
+.btn-facebook:hover {
+  color: #fff;
+  background-color: #405d9b;
+  outline: 0;
+  border: none;
+}
+
+.btn-facebook:active {
+  color: #fff;
+  background-color: #405d9b;
+  outline: 0;
+  border: none;
+}
+
+.btn-facebook:focus {
+  color: #fff;
+}
+
+.btn-pinterest {
+  color: #fff;
+  background-color: #cb2027;
+  outline: 0;
+  border: none;
+}
+
+.btn-pinterest:hover {
+  color: #fff;
+  background-color: #cb2027;
+  outline: 0;
+  border: none;
+}
+
+.btn-pinterest:active {
+  color: #fff;
+  background-color: #cb2027;
+  outline: 0;
+  border: none;
+}
+
+.btn-pinterest:focus {
+  color: #fff;
+}
+
+.btn-whatsapp {
+  color: #fff;
+  background-color: #075e54;
+  outline: 0;
+  border: none;
+}
+
+.btn-whatsapp:hover {
+  color: #fff;
+  background-color: #075e54;
+  outline: 0;
+  border: none;
+}
+
+.btn-whatsapp:active {
+  color: #fff;
+  background-color: #075e54;
+  outline: 0;
+  border: none;
+}
+
+.btn-whatsapp:focus {
+  color: #fff;
+}
+
+.btn-twitter {
+  color: #fff;
+  background-color: #55acee;
+  outline: 0;
+  border: none;
+}
+
+.btn-twitter:hover {
+  color: #fff;
+  background-color: #55acee;
+  outline: 0;
+  border: none;
+}
+
+.btn-twitter:active {
+  color: #fff;
+  background-color: #55acee;
+  outline: 0;
+  border: none;
+}
+
+.btn-twitter:focus {
+  color: #fff;
+}
